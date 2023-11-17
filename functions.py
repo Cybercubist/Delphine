@@ -1,4 +1,4 @@
-﻿from collections import Counter
+from collections import Counter
 from spacy import displacy
 
 #trash token list (words, which are potentially useless)
@@ -48,16 +48,22 @@ def entities_count(doc):
     for ent in doc.ents:
         
         if ent.label_ == 'DATE':
+            
+            if ent.text not in dates_list:
         
-            dates_list.append(ent.text)
+                dates_list.append(ent.text)
             
         elif ent.label_ == 'ORG':
             
-            orgs_list.append(ent.text)
+            if ent.text not in orgs_list:
+            
+                orgs_list.append(ent.text)
         
         elif ent.label_ == 'MONEY' or ent.label_ == 'PERCENT':
             
-            numbers_list.append(ent.text)
+            if ent.text not in numbers_list:
+            
+                numbers_list.append(ent.text)
             
     entities_dict = {
         "Dates": dates_list,
@@ -81,6 +87,8 @@ def chunks_extraction (doc):
     
     for chunk in doc.noun_chunks:
         
-        chunks_list.append(chunk.text)
+        if chunk.text not in chunks_list:
+        
+            chunks_list.append(chunk.text)
         
     return chunks_list
