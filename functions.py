@@ -1,9 +1,6 @@
 from collections import Counter
 from spacy import displacy
-
-#trash token list (words, which are potentially useless)
-
-ttl = ['Q1', 'quarter', '%', 'year', 'question', 'business', 'thanks']
+import lists
 
 #SUBSIDIARY FUNCTIONS
 
@@ -28,7 +25,7 @@ def noun_count(doc):
     
     for token in doc:
         
-        if token.pos_=='NOUN' and token.text not in ttl:
+        if token.pos_=='NOUN' and token.text not in lists.ttl:
             token_text = token.text
             noun_list.append(token_text)
     
