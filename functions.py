@@ -15,6 +15,26 @@ def word_counter(word_list, word_number):
     
     return (dict(result[0:word_number]))
 
+def input_text():
+    
+    text = ''
+    
+    print('Enter text')
+    text = input()
+    
+    return text
+    
+def doc_to_sents(doc):
+    
+    sents_list = []
+    
+    for sent in doc.sents:
+        
+        sentence = sent.text
+        sents_list.append(sentence)
+        
+    return sents_list
+
 #PRIMARY FUNCTIONS
 
 #1.Counting nouns:
@@ -89,3 +109,17 @@ def chunks_extraction (doc):
             chunks_list.append(chunk.text)
         
     return chunks_list
+
+#5.Find sentence
+
+def find_sents(text, sents_list):
+    
+    found_sents = []
+    
+    for sent in sents_list:
+        
+        if text in sent:
+            
+            found_sents.append(sent)
+            
+    return found_sents
