@@ -11,8 +11,12 @@
 **3. Visualization module.** Returns entered text with some spaCy-based visualization (with highlighted entities).<br>
 **4. Text analysis module.** Allows you to find sentences in text cointaining information you are interested in.<br>
 
-All the modules are made in MVP style, and may be significantly improved later. We've created a clear and simple architecture for future feature improvement. 
+All the modules are made in MVP style, and may be significantly improved later. We've created a clear and simple architecture for future feature improvement.
 
-**Update 17.11.2023:** 
+**Current version:** <ins>Delphine 1.0.0.</ins> Delphine has it's own version number since 27.11.2023.
+
+**Updates:**
+
+<ins>17.11.2023:</ins>
 1. Added "find sentence" function. Now you can find a sentence which contains words, entities, numbers or chunks you are interested in.
 2. Small architecture improvements. Data extraction part and visualization part are now in separated cells. Lists (for example trash token list) are now in a separated file.  
